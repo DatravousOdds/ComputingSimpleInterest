@@ -1,10 +1,37 @@
-let princpleAmount = prompt("Enter the principle: ");
-let annualRateOfInterest = prompt("Enter the rate of interest: ");
-let numberOfYears = prompt("Enter the number of years: ");
 
-annualRateOfInterest = parseFloat(annualRateOfInterest);
+
+while(true) {
+  // Define the variables needed for the program
+  let princpleAmount = prompt("Enter the principle: ");
+  let annualRateOfInterest = prompt("Enter the rate of interest: ");
+  let numberOfYears = prompt("Enter the number of years: ");
+
+  if(isNaN(princpleAmount) || isNaN(annualRateOfInterest) || isNaN(numberOfYears)) {
+    
+  }
+}
+
+
+// Define the variables needed for the program
+// let princpleAmount = prompt("Enter the principle: ");
+// let annualRateOfInterest = prompt("Enter the rate of interest: ");
+// let numberOfYears = prompt("Enter the number of years: ");
+
+// Convert into numerical values
+princpleAmount = parseFloat(princpleAmount);
+annualRateOfInterest = parseFloat(annualRateOfInterest) / 100;
+numberOfYears = parseFloat(numberOfYears);
+
+// Error checking
+console.log("Principle Amount: " + princpleAmount);
 console.log("rate of interest: ", annualRateOfInterest);
-let endOfInvesment = princpleAmount * (1 + annualRateOfInterest * numberOfYears)
-console.log(endOfInvesment);
+console.log("Number of years: ", numberOfYears);
 
-console.log(`After ${numberOfYears} years at ${annualRateOfInterest}% the investment will be worth ${enOfInvesment}`)
+// Compute the simple interest
+let endOfInvesment = princpleAmount * (1 + annualRateOfInterest * numberOfYears)
+endOfInvesment = Math.ceil(endOfInvesment * 100) / 100;
+console.log(
+  "The end of investment is: " + endOfInvesment
+)
+// Display results
+console.log(`After ${numberOfYears} years at $${annualRateOfInterest * 100}% the investment will be worth ${endOfInvesment}`)
