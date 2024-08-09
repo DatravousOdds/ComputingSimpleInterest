@@ -7,7 +7,7 @@ while(true) {
   let numberOfYears = prompt("Enter the number of years: ");
 
   if(isNaN(princpleAmount) || isNaN(annualRateOfInterest) || isNaN(numberOfYears)) {
-    
+    console.error(new Error("Invalid input. Please enter a valid number."));
   }
 }
 
@@ -30,6 +30,8 @@ console.log("Number of years: ", numberOfYears);
 // Compute the simple interest
 let endOfInvesment = princpleAmount * (1 + annualRateOfInterest * numberOfYears)
 endOfInvesment = Math.ceil(endOfInvesment * 100) / 100;
+
+// Error Checking
 console.log(
   "The end of investment is: " + endOfInvesment
 )
