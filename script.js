@@ -4,59 +4,50 @@ let numberOfYears = "";
 let endOfInvestment = 0.00;
 let simpleInterest = "";
 
+const calculateSimpleInterest = (princpleAmount, annualRateOfInterest, numberOfYears) => {
+
+  // Convert into numerical values
+  princpleAmount = parseFloat(princpleAmount);
+  annualRateOfInterest = parseFloat(annualRateOfInterest) / 100;
+  numberOfYears = parseFloat(numberOfYears);
+
+
+
+  // Compute the simple interest
+  endOfInvestment = princpleAmount * (1 + annualRateOfInterest * numberOfYears)
+
+
+  return Math.round(endOfInvestment) * 100 / 100;
+}
+
 while (true) {
   // Define the variables needed for the program
-  let princpleAmount = prompt("Enter the principle: ");
-  let annualRateOfInterest = prompt("Enter the rate of interest: ");
-  let numberOfYears = prompt("Enter the number of years: ");
+  princpleAmount = prompt("Enter the principle: ");
+  annualRateOfInterest = prompt("Enter the rate of interest: ");
+  numberOfYears = prompt("Enter the number of years: ");
 
   if (isNaN(princpleAmount) || isNaN(annualRateOfInterest) || isNaN(numberOfYears)) {
-    alert("Invalid input. Please enter a valid number.");
+    alert("Invalid input. Please enter a valid numbers for all input.");
   } else {
+    endOfInvestment = calculateSimpleInterest(princpleAmount, annualRateOfInterest, numberOfYears);
 
-    // Convert into numerical values
-    princpleAmount = parseFloat(princpleAmount);
-    annualRateOfInterest = parseFloat(annualRateOfInterest) / 100;
-    numberOfYears = parseFloat(numberOfYears);
-
-    // Error checking
-    console.log("Principle Amount: " + princpleAmount);
-    console.log("rate of interest: ", annualRateOfInterest);
-    console.log("Number of years: ", numberOfYears);
-
-    // Compute the simple interest
-    endOfInvestment = princpleAmount * (1 + annualRateOfInterest * numberOfYears)
-    simpleInterest = Math.ceil(endOfInvestment * 100) / 100;
 
     // Error Checking
-    console.log("The end of investment is: " + simpleInterest);
+    console.log(`The end of investment is: 4${endOfInvestment}`);
+
+    // yearly results
+    let yearlyResults = princpleAmount * annualRateOfInterest;
+    console.log(`The yearly results are: ${yearlyResults}`);
+
     // Display results
-    console.log(`After ${numberOfYears} years at ${annualRateOfInterest * 100}% the investment will be worth $${simpleInterest}`)
+    alert(`After ${numberOfYears} years at ${annualRateOfInterest}% the investment will be worth $${endOfInvestment.toFixed(2)}`)
+
+    alert(`This is the amount at the end of the year: $${yearlyResults.toFixed(2)}`);
     break;
   }
-  // Display results
+
 
 }
 
-
-
-// Define the variables needed for the program
-// let princpleAmount = prompt("Enter the principle: ");
-// let annualRateOfInterest = prompt("Enter the rate of interest: ");
-// let numberOfYears = prompt("Enter the number of years: ");
-
-// Convert into numerical values
-// princpleAmount = parseFloat(princpleAmount);
-// annualRateOfInterest = parseFloat(annualRateOfInterest) / 100;
-// numberOfYears = parseFloat(numberOfYears);
-
-// Error checking
-// console.log("Principle Amount: " + princpleAmount);
-// console.log("rate of interest: ", annualRateOfInterest);
-// console.log("Number of years: ", numberOfYears);
-
-// Compute the simple interest
-// let endOfInvesment = princpleAmount * (1 + annualRateOfInterest * numberOfYears)
-// endOfInvesment = Math.ceil(endOfInvesment * 100) / 100;
 
 
